@@ -2,9 +2,9 @@ import {RouterModule, Routes} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
 import {AboutComponent, HomeComponent, HomeLandingComponent} from "./components/public/home.component";
 import {SecureHomeComponent} from "./components/secure/landing/landing.component";
-import {ProfileComponent} from "./components/secure/profile/profile.component";
-import {JwttokenComponent} from "./components/secure/jwttokens/jwttoken.component";
-import {UseractivityComponent} from "./components/secure/useractivity/useractivity.component";
+import {SysAdminComponent} from "./components/secure/sysadmin/sysadmin.component";
+import {TenantComponent} from "./components/secure/tenant/tenant.component";
+import {SoaComponent} from "./components/secure/soa/soa.component";
 import {LoginComponent} from "./components/public/auth/login/login.component";
 import {RegisterComponent} from "./components/public/auth/register/register.component";
 import {ForgotPasswordComponent, ForgotComponent} from "./components/public/auth/forgot/forgot.component";
@@ -45,10 +45,11 @@ const secureHomeRoutes: Routes = [
     {
         path: 'securehome', component: SecureHomeComponent, children: [
         {path: 'logout', component: LogoutComponent},
-        {path: 'jwttokens', component: JwttokenComponent},
-        {path: 'myprofile', component: ProfileComponent},
-        {path: 'useractivity', component: UseractivityComponent},
-        {path: '', component: ProfileComponent}]
+        {path: 'tenants', component: TenantComponent},
+        {path: 'users', component: TenantComponent},
+        {path: 'sysadmins', component: SysAdminComponent},
+        {path: 'soas', component: SoaComponent},
+        {path: '', component: SysAdminComponent}]
     }
 ];
 

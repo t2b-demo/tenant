@@ -13,10 +13,10 @@ export class Parameters {
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  templateUrl: './sysadmin.component.html',
+  styleUrls: ['./sysadmin.component.css']
 })
-export class ProfileComponent implements LoggedInCallback {
+export class SysAdminComponent implements LoggedInCallback {
 
   public parameters: Array<Parameters> = [];
   public cognitoId: String;
@@ -37,7 +37,7 @@ export class ProfileComponent implements LoggedInCallback {
 
 export class GetParametersCallback implements Callback {
 
-  constructor(public me: ProfileComponent, public cognitoUtil: CognitoService) {
+  constructor(public me: SysAdminComponent, public cognitoUtil: CognitoService) {
 
   }
 

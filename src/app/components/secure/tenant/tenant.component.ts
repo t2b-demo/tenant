@@ -10,10 +10,10 @@ export class Stuff {
 
 @Component({
   selector: 'app-jwttoken',
-  templateUrl: './jwttoken.component.html',
-  styleUrls: ['./jwttoken.component.css']
+  templateUrl: './tenant.component.html',
+  styleUrls: ['./tenant.component.css']
 })
-export class JwttokenComponent implements LoggedInCallback {
+export class TenantComponent implements LoggedInCallback {
 
   public stuff: Stuff = new Stuff();
 
@@ -35,7 +35,7 @@ export class JwttokenComponent implements LoggedInCallback {
 
 
 export class AccessTokenCallback implements Callback {
-  constructor(public jwt: JwttokenComponent) {
+  constructor(public jwt: TenantComponent) {
 
   }
 
@@ -49,7 +49,7 @@ export class AccessTokenCallback implements Callback {
 }
 
 export class IdTokenCallback implements Callback {
-  constructor(public jwt: JwttokenComponent) {
+  constructor(public jwt: TenantComponent) {
 
   }
 

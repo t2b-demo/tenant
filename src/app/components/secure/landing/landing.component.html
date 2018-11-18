@@ -21,10 +21,6 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a [routerLink]="['/securehome/myprofile']"><i class="fa fa-user fa-fw"></i> User
-                        Profile</a>
-                    </li>
-                    <li class="divider"></li>
                     <li><a [routerLink]="['/securehome/logout']">Logout</a>
                     </li>
                 </ul>
@@ -38,13 +34,13 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a [routerLink]="['/securehome/myprofile']"><i class="fa fa-dashboard fa-fw"></i> My Profile</a>
+                        <a [routerLink]="['/securehome/sysadmins']"><i class="fa fa-dashboard fa-fw"></i> SeSam Admin</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/securehome/jwttokens']"><i class="fa fa-table fa-fw"></i> JWT Tokens</a>
+                        <a [routerLink]="['/securehome/tenants']"><i class="fa fa-table fa-fw"></i> Tenant Admin</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/securehome/useractivity']"><i class="fa fa-table fa-fw"></i> Login Data</a>
+                        <a [routerLink]="['/securehome/soas']"><i class="fa fa-table fa-fw"></i> Soas</a>
                     </li>
                 </ul>
             </div>

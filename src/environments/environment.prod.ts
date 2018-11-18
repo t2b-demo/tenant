@@ -3,13 +3,9 @@ export const environment = {
 
   region: 'eu-central-1',
 
-  identityPoolId: 'us-east-1:fbe0340f-9ffc-4449-a935-bb6a6661fd53',
-  userPoolId: 'us-east-1_PGSbCVZ7S',
-  clientId: 'hh5ibv67so0qukt55c5ulaltk',
-
-  rekognitionBucket: 'rekognition-pics',
-  albumName: "usercontent",
-  bucketRegion: 'us-east-1',
+  identityPoolId: 'eu-central-1:253d4d3a-4be7-4bee-bb98-e2e8e162b98b',
+  userPoolId: 'eu-central-1_PI8ep591h',
+  clientId: '50i6ivq2q5ro90ihebnje78h45',
 
   ddbTableName: 'LoginTrail',
 

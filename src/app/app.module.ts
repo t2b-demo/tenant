@@ -21,10 +21,10 @@ import { MFAComponent } from './components/public/auth/mfa/mfa.component';
 import { NewPasswordComponent } from './components/public/auth/newpassword/newpassword.component';
 import { RegisterComponent } from './components/public/auth/register/register.component';
 import { ResendComponent } from './components/public/auth/resend/resend.component';
-import { JwttokenComponent } from './components/secure/jwttokens/jwttoken.component';
+import {TenantComponent} from "./components/secure/tenant/tenant.component";
 import { SecureHomeComponent } from './components/secure/landing/landing.component';
-import { ProfileComponent } from './components/secure/profile/profile.component';
-import { UseractivityComponent } from './components/secure/useractivity/useractivity.component';
+import {SysAdminComponent} from "./components/secure/sysadmin/sysadmin.component";
+import { SoaComponent } from './components/secure/soa/soa.component';
  
 @NgModule({
   declarations: [
@@ -41,10 +41,10 @@ import { UseractivityComponent } from './components/secure/useractivity/useracti
     NewPasswordComponent,
     RegisterComponent,
     ResendComponent,
-    JwttokenComponent,
+    TenantComponent,
     SecureHomeComponent,
-    ProfileComponent,
-    UseractivityComponent
+    SysAdminComponent,
+    SoaComponent
   ],
   imports: [
     BrowserModule,

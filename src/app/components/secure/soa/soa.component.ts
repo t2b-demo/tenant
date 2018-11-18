@@ -10,17 +10,17 @@ export class Stuff {
 }
 
 @Component({
-  selector: 'app-useractivity',
-  templateUrl: './useractivity.component.html',
-  styleUrls: ['./useractivity.component.css']
+  selector: 'app-soa',
+  templateUrl: './soa.component.html',
+  styleUrls: ['./soa.component.css']
 })
-export class UseractivityComponent implements LoggedInCallback {
+export class SoaComponent implements LoggedInCallback {
 
   public logdata: Array<Stuff> = [];
 
   constructor(public router: Router, public ddb: DynamoDBService, public userService: UserLoginService) {
       this.userService.isAuthenticated(this);
-      console.log("in UseractivityComponent");
+      console.log("in SoaComponent");
   }
 
   isLoggedIn(message: string, isLoggedIn: boolean) {

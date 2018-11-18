@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JwttokenComponent } from './jwttoken.component';
+import { TenantComponent } from './tenant.component';
 
 describe('JwttokenComponent', () => {
-  let component: JwttokenComponent;
-  let fixture: ComponentFixture<JwttokenComponent>;
+  let component: TenantComponent;
+  let fixture: ComponentFixture<TenantComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JwttokenComponent ]
+      declarations: [ TenantComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JwttokenComponent);
+    fixture = TestBed.createComponent(TenantComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from "../../../environments/environment";
 import { CognitoUserPool } from "amazon-cognito-identity-js";
+import jwtDecode from'jwt-decode';
 import * as AWS from "aws-sdk/global";
 import * as awsservice from "aws-sdk/lib/service";
 import * as CognitoIdentity from "aws-sdk/clients/cognitoidentity";
@@ -94,6 +95,28 @@ export class CognitoService {
 
   getCognitoIdentity(): string {
       return this.cognitoCreds.identityId;
+  }
+
+  getUserSession(callback: Callback): void {
+    if (callback == null) {
+        throw("CognitoUtil: callback in getAccessToken is null...returning");
+    }
+    if (this.getCurrentUser() != null) {
+        this.getCurrentUser().getSession(function (err, session) {
+            if (err) {
+                console.log("CognitoUtil: Can't set the credentials:" + err);
+                callback.callbackWithParam(null);
+            }
+            else {
+                if (session.isValid()) {
+                    callback.callbackWithParam(session);
+                }
+            }
+        });
+    }
+    else {
+        callback.callbackWithParam(null);
+    }
   }
 
   getAccessToken(callback: Callback): void {

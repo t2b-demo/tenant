@@ -7,10 +7,48 @@
 <div class="tab-content">
     <div id="tenants" class="tab-pane fade in active">
         <h3>Tenants</h3>
-        <p>{{ stuff.accessToken }}</p>
+        <table class="table table-hover table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+            <tr class="active">
+                <td>Roche</td>
+                <td>tenant@roche.ch</td>
+                <td>Active</td>
+            </tr>
+            <tr class="active">
+                <td>Novartis</td>
+                <td>tenant@novartis.ch</td>
+                <td>Active</td>
+            </tr>    
+        </table>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">New Tenant</button>
+        </div>
     </div>
     <div id="users" class="tab-pane fade">
         <h3>Users</h3>
-        <p>{{ stuff.idToken }}</p>
+        <table class="table table-hover table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+            <tr class="active">
+                <td>Mark Regenass</td>
+                <td>mark.regenass@roche.ch</td>
+                <td>Active</td>
+            </tr>
+            <tr class="active">
+                <td>Benjamin Rosenberg</td>
+                <td>benjami @novartis.ch</td>
+                <td>Active</td>
+            </tr>    
+        </table>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">New User</button>
+        </div>
     </div>
 </div>

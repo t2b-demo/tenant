@@ -1,8 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { UserLoginService } from "../../../../services/aws/user-login.service";
-import { ChallengeParameters, CognitoCallback, LoggedInCallback } from "../../../../services/aws/cognito.service";
-import { DynamoDBService } from "../../../../services/aws/dynamodb.service";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserLoginService } from '../../../../services/aws/user-login.service';
+import { ChallengeParameters, CognitoCallback, LoggedInCallback } from '../../../../services/aws/cognito.service';
 
 @Component({
   selector: 'app-login',
@@ -21,20 +20,19 @@ export class LoginComponent implements CognitoCallback, LoggedInCallback, OnInit
   };
 
   constructor(public router: Router,
-              public ddb: DynamoDBService,
               public userService: UserLoginService) {
-      console.log("LoginComponent constructor");
+      console.log('LoginComponent constructor');
   }
 
   ngOnInit() {
       this.errorMessage = null;
-      console.log("Checking if the user is already authenticated. If so, then redirect to the secure site");
+      console.log('Checking if the user is already authenticated. If so, then redirect to the secure site');
       this.userService.isAuthenticated(this);
   }
 
   onLogin() {
       if (this.email == null || this.password == null) {
-          this.errorMessage = "All fields are required";
+          this.errorMessage = 'All fields are required';
           return;
       }
       this.errorMessage = null;
@@ -42,18 +40,17 @@ export class LoginComponent implements CognitoCallback, LoggedInCallback, OnInit
   }
 
   cognitoCallback(message: string, result: any) {
-      if (message != null) { //error
+      if (message != null) { // error
           this.errorMessage = message;
-          console.log("result: " + this.errorMessage);
+          console.log('result: ' + this.errorMessage);
           if (this.errorMessage === 'User is not confirmed.') {
-              console.log("redirecting");
+              console.log('redirecting');
               this.router.navigate(['/home/confirmRegistration', this.email]);
           } else if (this.errorMessage === 'User needs to set password.') {
-              console.log("redirecting to set new password");
+              console.log('redirecting to set new password');
               this.router.navigate(['/home/newPassword']);
           }
-      } else { //success
-          this.ddb.writeLogEntry("login");
+      } else { // success
           this.router.navigate(['/securehome']);
       }
   }
@@ -63,7 +60,7 @@ export class LoginComponent implements CognitoCallback, LoggedInCallback, OnInit
       this.mfaData.destination = challengeParameters.CODE_DELIVERY_DESTINATION;
       this.mfaData.callback = (code: string) => {
           if (code == null || code.length === 0) {
-              this.errorMessage = "Code is required";
+              this.errorMessage = 'Code is required';
               return;
           }
           this.errorMessage = null;
@@ -79,7 +76,7 @@ export class LoginComponent implements CognitoCallback, LoggedInCallback, OnInit
 
   cancelMFA(): boolean {
       this.mfaStep = false;
-      return false;   //necessary to prevent href navigation
+      return false;   // necessary to prevent href navigation
   }
 
 }

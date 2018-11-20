@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import {UserLoginService} from "../../../services/aws/user-login.service";
-import {Callback, CognitoService, LoggedInCallback} from "../../../services/aws/cognito.service";
-import {UserParametersService} from "../../../services/aws/user-parameters.service";
-import {Router} from "@angular/router";
+import {UserLoginService} from '../../../services/aws/user-login.service';
+import {Callback, CognitoService, LoggedInCallback} from '../../../services/aws/cognito.service';
+import {UserParametersService} from '../../../services/aws/user-parameters.service';
+import {Router} from '@angular/router';
 
 
 export class Parameters {
@@ -21,9 +21,12 @@ export class SysAdminComponent implements LoggedInCallback {
   public parameters: Array<Parameters> = [];
   public cognitoId: String;
 
-  constructor(public router: Router, public userService: UserLoginService, public userParams: UserParametersService, public cognitoUtil: CognitoService) {
+  constructor(public router: Router,
+    public userService: UserLoginService,
+    public userParams: UserParametersService,
+    public cognitoUtil: CognitoService) {
       this.userService.isAuthenticated(this);
-      console.log("In ProfileComponent");
+      console.log('In ProfileComponent');
   }
 
   isLoggedIn(message: string, isLoggedIn: boolean) {
@@ -48,14 +51,14 @@ export class GetParametersCallback implements Callback {
   callbackWithParam(result: any) {
 
       for (let i = 0; i < result.length; i++) {
-          let parameter = new Parameters();
+          const parameter = new Parameters();
           parameter.name = result[i].getName();
           parameter.value = result[i].getValue();
           this.me.parameters.push(parameter);
       }
-      let param = new Parameters()
-      param.name = "cognito ID";
+      const param = new Parameters();
+      param.name = 'cognito ID';
       param.value = this.cognitoUtil.getCognitoIdentity();
-      this.me.parameters.push(param)
+      this.me.parameters.push(param);
   }
 }

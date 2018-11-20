@@ -17,7 +17,7 @@ export class AboutComponent {
 })
 export class HomeLandingComponent {
   constructor() {
-      console.log("HomeLandingComponent constructor");
+      console.log('HomeLandingComponent constructor');
   }
 }
 
@@ -28,8 +28,8 @@ export class HomeLandingComponent {
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { 
-    console.log("HomeComponent constructor");
+  constructor() {
+    console.log('HomeComponent constructor');
   }
 
   ngOnInit() {

@@ -1,16 +1,16 @@
-import {RouterModule, Routes} from "@angular/router";
-import {ModuleWithProviders} from "@angular/core";
-import {AboutComponent, HomeComponent, HomeLandingComponent} from "./components/public/home.component";
-import {SecureHomeComponent} from "./components/secure/landing/landing.component";
-import {SysAdminComponent} from "./components/secure/sysadmin/sysadmin.component";
-import {TenantComponent} from "./components/secure/tenant/tenant.component";
-import {SoaComponent} from "./components/secure/soa/soa.component";
-import {LoginComponent} from "./components/public/auth/login/login.component";
-import {RegisterComponent} from "./components/public/auth/register/register.component";
-import {ForgotPasswordComponent, ForgotComponent} from "./components/public/auth/forgot/forgot.component";
-import {LogoutComponent, ConfirmComponent} from "./components/public/auth/confirm/confirm.component";
-import {ResendComponent} from "./components/public/auth/resend/resend.component";
-import {NewPasswordComponent} from "./components/public/auth/newpassword/newpassword.component";
+import {RouterModule, Routes} from '@angular/router';
+import {ModuleWithProviders} from '@angular/core';
+import {AboutComponent, HomeComponent, HomeLandingComponent} from './components/public/home.component';
+import {SecureHomeComponent} from './components/secure/landing/landing.component';
+import {SysAdminComponent} from './components/secure/sysadmin/sysadmin.component';
+import {TenantComponent} from './components/secure/tenant/tenant.component';
+import {SoaComponent} from './components/secure/soa/soa.component';
+import {LoginComponent} from './components/public/auth/login/login.component';
+import {RegisterComponent} from './components/public/auth/register/register.component';
+import {ForgotPasswordComponent, ForgotComponent} from './components/public/auth/forgot/forgot.component';
+import {LogoutComponent, ConfirmComponent} from './components/public/auth/confirm/confirm.component';
+import {ResendComponent} from './components/public/auth/resend/resend.component';
+import {NewPasswordComponent} from './components/public/auth/newpassword/newpassword.component';
 
 const homeRoutes: Routes = [
     {

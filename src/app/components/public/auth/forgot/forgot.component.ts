@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import {ActivatedRoute, Router} from "@angular/router";
-import {UserLoginService} from "../../../../services/aws/user-login.service";
-import {CognitoCallback} from "../../../../services/aws/cognito.service";
+import {ActivatedRoute, Router} from '@angular/router';
+import {UserLoginService} from '../../../../services/aws/user-login.service';
+import {CognitoCallback} from '../../../../services/aws/cognito.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -23,9 +23,9 @@ export class ForgotPasswordComponent implements CognitoCallback {
   }
 
   cognitoCallback(message: string, result: any) {
-      if (message == null && result == null) { //error
+      if (message == null && result == null) { // error
           this.router.navigate(['/home/forgotPassword', this.email]);
-      } else { //success
+      } else { // success
           this.errorMessage = message;
       }
   }
@@ -46,7 +46,7 @@ export class ForgotComponent implements CognitoCallback, OnInit, OnDestroy {
 
     constructor(public router: Router, public route: ActivatedRoute,
                 public userService: UserLoginService) {
-        console.log("email from the url: " + this.email);
+        console.log('email from the url: ' + this.email);
     }
 
     ngOnInit() {
@@ -67,10 +67,10 @@ export class ForgotComponent implements CognitoCallback, OnInit, OnDestroy {
     }
 
     cognitoCallback(message: string) {
-        if (message != null) { //error
+        if (message != null) { // error
             this.errorMessage = message;
-            console.log("result: " + this.errorMessage);
-        } else { //success
+            console.log('result: ' + this.errorMessage);
+        } else { // success
             this.router.navigate(['/home/login']);
         }
     }

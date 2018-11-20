@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import {ActivatedRoute, Router} from "@angular/router";
-import {UserRegistrationService} from "../../../../services/aws/user-registration.service";
-import {UserLoginService} from "../../../../services/aws/user-login.service";
-import {LoggedInCallback} from "../../../../services/aws/cognito.service";
+import {ActivatedRoute, Router} from '@angular/router';
+import {UserRegistrationService} from '../../../../services/aws/user-registration.service';
+import {UserLoginService} from '../../../../services/aws/user-login.service';
+import {LoggedInCallback} from '../../../../services/aws/cognito.service';
 
 @Component({
   selector: 'app-logout',
@@ -12,7 +12,7 @@ import {LoggedInCallback} from "../../../../services/aws/cognito.service";
 export class LogoutComponent implements LoggedInCallback {
   constructor(public router: Router,
               public userService: UserLoginService) {
-      this.userService.isAuthenticated(this)
+      this.userService.isAuthenticated(this);
   }
 
   isLoggedIn(message: string, isLoggedIn: boolean) {
@@ -58,12 +58,12 @@ export class ConfirmComponent implements OnInit, OnDestroy {
   }
 
   cognitoCallback(message: string, result: any) {
-      if (message != null) { //error
+      if (message != null) { // error
           this.errorMessage = message;
-          console.log("message: " + this.errorMessage);
-      } else { //success
-          //move to the next step
-          console.log("Moving to securehome");
+          console.log('message: ' + this.errorMessage);
+      } else { // success
+          // move to the next step
+          console.log('Moving to securehome');
           // this.configs.curUser = result.user;
           this.router.navigate(['/securehome']);
       }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UserLoginService} from "../../../services/aws/user-login.service";
-import {LoggedInCallback} from "../../../services/aws/cognito.service";
-import {Router} from "@angular/router";
-import {DynamoDBService} from "../../../services/aws/dynamodb.service";
+import {UserLoginService} from '../../../services/aws/user-login.service';
+import {LoggedInCallback} from '../../../services/aws/cognito.service';
+import {Router} from '@angular/router';
 
 export class Stuff {
   public type: string;
@@ -18,17 +17,16 @@ export class SoaComponent implements LoggedInCallback {
 
   public logdata: Array<Stuff> = [];
 
-  constructor(public router: Router, public ddb: DynamoDBService, public userService: UserLoginService) {
+  constructor(public router: Router, public userService: UserLoginService) {
       this.userService.isAuthenticated(this);
-      console.log("in SoaComponent");
+      console.log('in SoaComponent');
   }
 
   isLoggedIn(message: string, isLoggedIn: boolean) {
       if (!isLoggedIn) {
           this.router.navigate(['/home/login']);
       } else {
-          console.log("scanning DDB");
-          this.ddb.getLogEntries(this.logdata);
+          console.log('scanning DDB');
       }
   }
 

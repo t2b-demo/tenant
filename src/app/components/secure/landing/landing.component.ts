@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Router} from "@angular/router";
-import {UserLoginService} from "../../../services/aws/user-login.service";
-import {LoggedInCallback} from "../../../services/aws/cognito.service";
+import {Router} from '@angular/router';
+import {UserLoginService} from '../../../services/aws/user-login.service';
+import {LoggedInCallback} from '../../../services/aws/cognito.service';
 
 @Component({
   selector: 'app-landing',
@@ -13,7 +13,7 @@ export class SecureHomeComponent implements OnInit, LoggedInCallback {
 
   constructor(public router: Router, public userService: UserLoginService) {
     this.userService.isAuthenticated(this);
-    console.log("SecureHomeComponent: constructor");
+    console.log('SecureHomeComponent: constructor');
   }
 
   ngOnInit() {

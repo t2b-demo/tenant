@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {UserLoginService} from "../../../services/aws/user-login.service";
-import {Callback, CognitoService, LoggedInCallback} from "../../../services/aws/cognito.service";
-import {Router} from "@angular/router";
-import jwtDecode from'jwt-decode';
+import {UserLoginService} from '../../../services/aws/user-login.service';
+import {Callback, CognitoService, LoggedInCallback} from '../../../services/aws/cognito.service';
+import {Router} from '@angular/router';
+import jwtDecode from 'jwt-decode';
 
 export class Stuff {
   public accessToken: string;
@@ -33,7 +33,7 @@ export class TenantComponent implements LoggedInCallback {
 
   constructor(public router: Router, public userService: UserLoginService, public cognitoUtil: CognitoService) {
       this.userService.isAuthenticated(this);
-      console.log("in TenantComponent");
+      console.log('in TenantComponent');
 
   }
 
@@ -52,15 +52,13 @@ export class TenantCallback implements Callback {
     constructor(public jwt: TenantComponent) {
 
     }
-  
+
     callback() {
-  
+
     }
-  
+
     callbackWithParam(result) {
-        console.log('-------------------');
-        console.log(result);
-        var sessionIdInfo = jwtDecode(result.getIdToken().jwtToken);
+        const sessionIdInfo = jwtDecode(result.getIdToken().jwtToken);
         console.log(sessionIdInfo['email']);
         console.log(sessionIdInfo['cognito:username']);
         console.log(sessionIdInfo['email_verified']);
